@@ -23,4 +23,4 @@ private:
 };
 
 CALCULATOR_SUB_CLASS_GENERATOR(DivisionByZero, "division by zero is forbidden");
-CALCULATOR_SUB_CLASS_GENERATOR(UnKnownOperator, "unknoen operator");
+CALCULATOR_SUB_CLASS_GENERATOR(UnKnownOperator, "unknown operator");
