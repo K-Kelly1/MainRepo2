@@ -1,13 +1,10 @@
-#include <cmath>
-#include <iostream>
-#include <string>
-
 #include "GenericFunctions.h"
+
+#include <iostream>
 
 using std::cin;
 using std::cout;
 using std::endl;
-using std::string;
 
 /**
  * @brief Initializes primes array of size arrayLen
@@ -21,19 +18,14 @@ void initializePrimesArray(int* primesArray, unsigned int arrayLen) {
     bool foundInThisIteration = false;
 
     while (primesCounter < arrayLen) {
-        while (!foundInThisIteration) {
-            bool isNumPrime = isPrime(currNum);
+        bool isNumPrime = isPrime(currNum);
 
-            if (isNumPrime) {
-                foundInThisIteration = true;
-                primesArray[primesCounter] = currNum;
-            }
-
-            currNum++;
+        if (isNumPrime) {
+            primesArray[primesCounter] = currNum;
+            primesCounter++;
         }
 
-        foundInThisIteration = false;
-        primesCounter++;
+        currNum++;
     }
 }
 
