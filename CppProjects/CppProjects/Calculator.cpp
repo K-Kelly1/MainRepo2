@@ -1,4 +1,6 @@
 #include "Calculator.h"
+#include "DivisionByZero.h"
+#include "UnKnownOperator.h"
 #include "CalculatorException.h"
 
 using std::cout;
@@ -19,9 +21,9 @@ double Calculator::multiply(const double firstOperand, const double secondOperan
 
 double Calculator::divide(const double firstOperand, const double secondOperand) {
 	if (secondOperand == 0) {
-		throw CalculatorException("Cant divide by 0! bye");
+		throw DivisionByZero();
 	}
-	
+
 	return firstOperand / secondOperand;
 }
 
@@ -40,15 +42,10 @@ double Calculator::calculate(const double firstOperand, const char theOperator, 
 		result = Calculator::multiply(firstOperand, secondOperand);
 		break;
 	case Operator::DIVIDE:
-		try {
-			result = Calculator::divide(firstOperand, secondOperand);
-		} catch (const CalculatorException& exception) {
-			throw exception;
-		}
-
+		result = Calculator::divide(firstOperand, secondOperand);
 		break;
 	default:
-		throw CalculatorException{ "There is no such an operator! bye" };
+		throw UnKnownOperator();
 	}
 
 	return result;
@@ -63,12 +60,12 @@ int main() {
 	try {
 		cout << Calculator::calculate(6, '/', 0) << endl;
 	} catch (const CalculatorException& exception) {
-		cout << exception.getError() << endl;
+		cerr << exception.getError() << endl;
 	}
 
 	try {
 		cout << Calculator::calculate(6, ';', 0) << endl;
 	} catch (const CalculatorException& exception) {
-		cout << exception.getError() << endl;
+		cerr << exception.getError() << endl;
 	}
 }

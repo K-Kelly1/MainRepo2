@@ -1,18 +1,22 @@
 #pragma once
+
 #include <iostream>
 #include <string>
 
-class CalculatorException
-{
-private:
-	std::string m_error;
-
+class CalculatorException {
 public:
-	CalculatorException(std::string error) : m_error{ error } {
-		// Initialized by initialization list
+	CalculatorException() : m_error{"Generic calculator exception"} {
+		// Left blank intentionally
 	}
 
 	const std::string& getError() const {
-		return m_error; 
+		return this->m_error;
 	}
+
+	void setError(std::string error) {
+		this->m_error = error;
+	}
+
+private:
+	std::string m_error;
 };
