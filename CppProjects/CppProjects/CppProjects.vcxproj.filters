@@ -26,11 +26,5 @@
     <ClInclude Include="Calculator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="DivisionByZero.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UnKnownOperator.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

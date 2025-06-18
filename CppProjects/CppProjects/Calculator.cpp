@@ -1,7 +1,4 @@
 #include "Calculator.h"
-#include "DivisionByZero.h"
-#include "UnKnownOperator.h"
-#include "CalculatorException.h"
 
 using std::cout;
 using std::cerr;

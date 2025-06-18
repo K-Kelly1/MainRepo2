@@ -1,5 +1,7 @@
 #pragma once
 
+#include "CalculatorException.h"
+
 #include <iostream>
 
 class Calculator {
