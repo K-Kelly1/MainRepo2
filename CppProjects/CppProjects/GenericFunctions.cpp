@@ -11,6 +11,8 @@ void printArray(int* array, int arrayLen) {
     for (int i = 0; i < arrayLen; i++) {
         cout << array[i] << " ";
     }
+
+    cout << endl;
 }
 
 bool isPrime(int number) {
